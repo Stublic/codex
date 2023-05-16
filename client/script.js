@@ -79,7 +79,8 @@ const handleSubmit = async (e) => {
   const response = await fetch('https://codex-9iwm.onrender.com', {
     method: 'POST',
     headers: {
-      'Content-Type': 'aplication/json'
+      'Content-Type': 'aplication/json',
+      'Authorization': `Bearer ${process.env.OPENAI_SECRET_KEY}`
     },
     body: JSON.stringify({
       prompt: data.get('prompt')
